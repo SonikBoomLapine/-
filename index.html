@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f2ec" />
+    <title>Крестики-нолики</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="game-card">
+      <p class="eyebrow">Игра для двоих</p>
+      <h1>Крестики-нолики</h1>
+      <p class="intro">Соберите три своих знака в ряд — по горизонтали, вертикали или диагонали.</p>
+
+      <section class="scoreboard" aria-label="Счёт игры">
+        <div class="score score-x" id="score-x-card">
+          <span class="score-symbol" aria-hidden="true">×</span>
+          <span class="score-label">Крестики</span>
+          <strong id="score-x">0</strong>
+        </div>
+        <div class="score score-draw">
+          <span class="score-symbol" aria-hidden="true">—</span>
+          <span class="score-label">Ничьи</span>
+          <strong id="score-draw">0</strong>
+        </div>
+        <div class="score score-o" id="score-o-card">
+          <span class="score-symbol" aria-hidden="true">○</span>
+          <span class="score-label">Нолики</span>
+          <strong id="score-o">0</strong>
+        </div>
+      </section>
+
+      <p class="status" id="status" role="status" aria-live="polite">Ходят крестики</p>
+
+      <div class="board" id="board" role="grid" aria-label="Игровое поле 3 на 3">
+        <button class="cell" type="button" role="gridcell" aria-label="Строка 1, столбец 1" data-index="0"></button>
+        <button class="cell" type="button" role="gridcell" aria-label="Строка 1, столбец 2" data-index="1"></button>
+        <button class="cell" type="button" role="gridcell" aria-label="Строка 1, столбец 3" data-index="2"></button>
+        <button class="cell" type="button" role="gridcell" aria-label="Строка 2, столбец 1" data-index="3"></button>
+        <button class="cell" type="button" role="gridcell" aria-label="Строка 2, столбец 2" data-index="4"></button>
+        <button class="cell" type="button" role="gridcell" aria-label="Строка 2, столбец 3" data-index="5"></button>
+        <button class="cell" type="button" role="gridcell" aria-label="Строка 3, столбец 1" data-index="6"></button>
+        <button class="cell" type="button" role="gridcell" aria-label="Строка 3, столбец 2" data-index="7"></button>
+        <button class="cell" type="button" role="gridcell" aria-label="Строка 3, столбец 3" data-index="8"></button>
+      </div>
+
+      <div class="actions">
+        <button class="button button-primary" id="new-game" type="button">Новый раунд</button>
+        <button class="button button-quiet" id="reset-score" type="button">Сбросить счёт</button>
+      </div>
+      <p class="footer-note">Игроки ходят по очереди на одном устройстве.</p>
+    </main>
+  </body>
+</html>
